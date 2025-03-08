@@ -1,0 +1,830 @@
+/* Global Reset */
+html, body {
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Header Section */
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(233, 233, 233, 0), rgba(201, 202, 203, 0.694)), url('influencer-img1.webp');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent; /* Transparent initially */
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navbar when scrolled */
+nav.scrolled {
+    background: rgba(4, 47, 88, 0.85); /* Blue background when scrolling */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 6%;
+}
+
+/* Logo */
+.logo img {
+    width: 90px;
+    height: auto;
+    display: block;
+}
+
+/* Navigation Links */
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-links ul li a:hover {
+    color: #f4a261;
+    transform: scale(1.1);
+}
+
+/* Mobile Menu Icon */
+nav .fa {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        background: rgba(4, 47, 88, 0.95);
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: -250px;
+        text-align: left;
+        z-index: 999;
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    }
+
+    .nav-links ul li {
+        display: block;
+        padding: 15px 0;
+    }
+
+    /* Ensure menu icon (hamburger) is visible */
+    nav .fa {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
+
+/* Text Box */
+.text-box {
+    color: white;
+    max-width: 90%;
+    padding: 20px;
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .text-box h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ====== Main Content Section (Influencer Marketing) ====== */
+
+.futuristic-content {
+    padding: 80px 0; /* Increased padding for a spacious, modern look */
+    background: #f8f9fc; /* Very slight blue shade for consistency */
+    position: relative;
+    overflow: hidden; /* Ensure animations don’t overflow */
+}
+
+.futuristic-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(230, 240, 255, 0.3), rgba(240, 245, 255, 0.3)); /* Subtle futuristic blue shade */
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 40px; /* Increased gap for a modern, spacious layout */
+    z-index: 1;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation for the wrapper */
+}
+
+/* Main Text and Image Content with Futuristic Design */
+.futuristic-text {
+    flex: 1;
+    text-align: left;
+    padding: 30px; /* Increased padding for a premium look */
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency for a futuristic glass effect */
+    border-radius: 15px; /* Rounded corners for modern appeal */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 221, 235, 0.1); /* Neon-inspired shadow */
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Start hidden for animation */
+    animation: slideInRight 1.5s ease-in-out forwards 0.2s; /* Slide in from right with delay */
+}
+
+.futuristic-text::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(0, 221, 235, 0.05), rgba(255, 0, 122, 0.05), transparent);
+    animation: shine 3s infinite linear; /* Futuristic shine effect */
+    z-index: 0;
+}
+
+.overview-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1s ease-in-out forwards 0.3s; /* Fade in from bottom with delay */
+}
+
+/* Titles and Headings */
+.futeristic-title {
+    font-size: 36px; /* Larger for impact, inspired by reference */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 40px; /* Space for overview tag */
+    background: linear-gradient(90deg, #00ddeb, #ff007a); /* Neon gradient for futuristic look */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1s ease-in-out forwards 0.5s; /* Fade in from bottom with delay */
+}
+
+.futeristic-subtitle, .futeristic-subheading {
+    font-size: 24px; /* Matches subheadings in reference */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 30px; /* Spacing between sections, matching reference */
+    background: linear-gradient(90deg, #00ddeb, #ff007a); /* Neon gradient for futuristic look */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1s ease-in-out forwards 0.7s; /* Fade in from bottom with delay */
+}
+
+/* Paragraphs */
+.content-para {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 1s ease-in-out forwards 0.9s; /* Fade in with delay */
+}
+
+/* Image Grid with Futuristic Design */
+.futuristic-grid {
+    display: flex;
+    gap: 20px; /* Matches the reference image spacing */
+    margin: 30px 0; /* Increased margin for spacing */
+    opacity: 0; /* Start hidden for animation */
+    animation: slideIn 1.2s ease-in-out forwards 1.1s; /* Slide in with delay */
+}
+
+.futuristic-img {
+    width: 100%;
+    height: 300px; /* Fixed height to ensure consistent size, adjust as needed */
+    object-fit: cover;
+    border-radius: 12px; /* Slightly larger radius for modern look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 221, 235, 0.1); /* Neon-inspired shadow */
+    max-width: 48%; /* Ensures two images fit side by side, matching reference */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover animation */
+    position: relative;
+    z-index: 1;
+}
+
+/* Partial white shade overlay, covering the top portion (like the reference image) */
+.futuristic-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Covers only the top half, matching the reference’s partial shade */
+    background: rgba(255, 255, 255, 0.8); /* White shade with 80% opacity, matching reference */
+    border-radius: 12px 12px 0 0; /* Match the top corners of the image */
+    z-index: 1; /* Above the background image but below hover effects */
+    pointer-events: none; /* Ensure clicks pass through to the div */
+    transition: opacity 0.5s ease; /* Smooth transition for hover */
+}
+
+/* Remove the white shade on hover for full image visibility */
+.futuristic-img:hover {
+    transform: scale(1.05); /* Slight scale on hover for interactivity */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1), 0 0 25px rgba(0, 221, 235, 0.3); /* Enhanced neon shadow on hover */
+}
+
+.futuristic-img:hover::before {
+    opacity: 0; /* Fade out the white shade on hover to show the full image */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%); }
+    100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .futuristic-text {
+        padding: 20px;
+        animation: fadeIn 1.5s ease-in-out forwards 0.2s; /* Simplified animation on tablet */
+    }
+
+    .futuristic-grid {
+        flex-direction: column;
+        gap: 15px;
+        animation: fadeIn 1.2s ease-in-out forwards 0.8s; /* Simplified animation on tablet */
+    }
+
+    .futuristic-img {
+        max-width: 100%; /* Full width on tablet */
+        height: 250px; /* Reduced height on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .futuristic-text {
+        padding: 15px;
+    }
+
+    .futeristic-title {
+        font-size: 28px;
+    }
+
+    .futeristic-subtitle, .futeristic-subheading {
+        font-size: 20px;
+    }
+
+    .content-para {
+        font-size: 14px;
+    }
+
+    .futuristic-img {
+        animation: fadeIn 1s ease-in-out forwards 0.8s; /* Simplified animation on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .futeristic-title {
+        font-size: 24px;
+    }
+
+    .futeristic-subtitle, .futeristic-subheading {
+        font-size: 18px;
+    }
+
+    .content-para {
+        font-size: 13px;
+    }
+
+    .futuristic-img {
+        animation: fadeIn 0.8s ease-in-out forwards 0.6s; /* Simplified animation on very small screens */
+        height: 200px; /* Further reduced height on mobile */
+    }
+}
+
+
+/* ======== Footer Section ======== */
+
+/* Footer Background - Elegant Theme */
+footer {
+    background: #25252e; /* Dark Theme */
+    color: white;
+    padding: 60px 0;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    gap: 30px;
+    flex-wrap: nowrap; /* Prevents sections from wrapping */
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+
+
+/* Fix for Follow Us alignment */
+.footer-section.follow-us {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    justify-content: flex-start;
+}
+
+/* Section Headers */
+.footer-section h3 {
+    font-size: 20px;
+    color: #f4a261;
+    margin-bottom: 12px;
+}
+
+/* Quick Links */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.footer-section ul li a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f4a261;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.footer-section p i {
+    margin-right: 10px;
+    color: #f4a261;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f4a261;
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+/* Responsive Design */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-section {
+        width: 45%; /* Show two sections per row */
+        text-align: left;
+    }
+    .footer-section.follow-us {
+        align-items: flex-start;
+    }
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+
+/* Small Tablets & Large Phones (700px - 768px) */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .footer-section.follow-us {
+        align-items: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Small Phones (Below 700px) */
+@media (max-width: 700px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-section.follow-us {
+        align-items: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== Main Content Section ====== */
+
+.futuristic-content {
+    padding: 80px 0; /* Increased padding for a spacious, modern look */
+    background: #f8f9fc; /* Very slight blue shade for consistency */
+    position: relative;
+    overflow: hidden; /* Ensure animations don’t overflow */
+}
+
+.futuristic-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(230, 240, 255, 0.3), rgba(240, 245, 255, 0.3)); /* Subtle futuristic blue shade */
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 40px; /* Increased gap for a modern, spacious layout */
+    z-index: 1;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation for the wrapper */
+}
+
+/* Main Text and Image Content with Futuristic Design */
+.futuristic-text {
+    flex: 1;
+    text-align: left;
+    padding: 30px; /* Increased padding for a premium look */
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency for a futuristic glass effect */
+    border-radius: 15px; /* Rounded corners for modern appeal */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 221, 235, 0.1); /* Neon-inspired shadow */
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Start hidden for animation */
+    animation: slideInRight 1.5s ease-in-out forwards 0.2s; /* Slide in from right with delay */
+}
+
+.futuristic-text::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(0, 221, 235, 0.05), rgba(255, 0, 122, 0.05), transparent);
+    animation: shine 3s infinite linear; /* Futuristic shine effect */
+    z-index: 0;
+}
+
+
+.overview-label {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0066cc;;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1s ease-in-out forwards 0.3s; /* Fade in from bottom with delay */
+}
+
+/* Titles and Headings */
+.futeristic-title {
+    font-size: 36px; /* Larger for impact, inspired by reference */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 40px; /* Space for overview tag */
+    background: linear-gradient(90deg, #00ddeb, #ff007a); /* Neon gradient for futuristic look */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1s ease-in-out forwards 0.5s; /* Fade in from bottom with delay */
+}
+
+.futeristic-subtitle, .futeristic-subheading {
+    font-size: 24px; /* Matches subheadings in reference */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 30px; /* Spacing between sections, matching reference */
+    background: linear-gradient(90deg, #00ddeb, #ff007a); /* Neon gradient for futuristic look */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1s ease-in-out forwards 0.7s; /* Fade in from bottom with delay */
+}
+
+/* Paragraphs */
+.content-para {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 1s ease-in-out forwards 0.9s; /* Fade in with delay */
+}
+
+/* Image Grid with Futuristic Design */
+.futuristic-grid {
+    display: flex;
+    gap: 20px; /* Matches the reference image spacing */
+    margin: 30px 0; /* Increased margin for spacing */
+    opacity: 0; /* Start hidden for animation */
+    animation: slideIn 1.2s ease-in-out forwards 1.1s; /* Slide in with delay */
+}
+
+/* Image Grid with Futuristic Design */
+.futuristic-grid {
+    display: flex;
+    gap: 20px; /* Matches the reference image spacing */
+    margin: 30px 0; /* Increased margin for spacing */
+    opacity: 0; /* Start hidden for animation */
+    animation: slideIn 1.2s ease-in-out forwards 1.1s; /* Slide in with delay */
+}
+
+/* Image Grid with Futuristic Design */
+.futuristic-grid {
+    display: flex;
+    gap: 20px; /* Matches the reference image spacing */
+    margin: 30px 0; /* Increased margin for spacing */
+    opacity: 0; /* Start hidden for animation */
+    animation: slideIn 1.2s ease-in-out forwards 1.1s; /* Slide in with delay */
+}
+
+.futuristic-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px; /* Slightly larger radius for modern look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 221, 235, 0.1); /* Neon-inspired shadow */
+    max-width: 48%; /* Ensures two images fit side by side, matching reference */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover animation */
+    position: relative;
+    z-index: 1;
+}
+
+.futuristic-img:hover {
+    transform: scale(1.02); /* Slight scale on hover for interactivity */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1), 0 0 25px rgba(0, 221, 235, 0.3); /* Enhanced neon shadow on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%); }
+    100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .futuristic-text {
+        padding: 20px;
+        animation: fadeIn 1.5s ease-in-out forwards 0.2s; /* Simplified animation on tablet */
+    }
+
+    .futuristic-grid {
+        flex-direction: column;
+        gap: 15px;
+        animation: fadeIn 1.2s ease-in-out forwards 0.8s; /* Simplified animation on tablet */
+    }
+
+    .futuristic-img {
+        max-width: 100%; /* Full width on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .futuristic-text {
+        padding: 15px;
+    }
+
+    .futeristic-title {
+        font-size: 28px;
+    }
+
+    .futeristic-subtitle, .futeristic-subheading {
+        font-size: 20px;
+    }
+
+    .content-para {
+        font-size: 14px;
+    }
+
+    .futuristic-img {
+        animation: fadeIn 1s ease-in-out forwards 0.8s; /* Simplified animation on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .futeristic-title {
+        font-size: 24px;
+    }
+
+    .futeristic-subtitle, .futeristic-subheading {
+        font-size: 18px;
+    }
+
+    .content-para {
+        font-size: 13px;
+    }
+
+    .futuristic-img {
+        animation: fadeIn 0.8s ease-in-out forwards 0.6s; /* Simplified animation on very small screens */
+    }
+}

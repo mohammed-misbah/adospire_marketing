@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Overview</title>
+    <link rel="stylesheet" href="dm-overview.css">
+    <link rel="icon" type="png" href="logo-adospire.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Load Latest FontAwesome 6 for New Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Home Section -->
+<section id="home" class="header">
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-Adospire-01.png" alt="Adospire Logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="text-box">
+        <h1>Digital Marketing Overview</h1>
+    </div>
+
+</section>
+
+<!-- JavaScript Navbar home transparent -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector("nav");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    });
+    
+</script>
+
+<!-- JavaScript for toggle menu -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var navLinks = document.getElementById("navLinks");
+        var closeIcon = document.querySelector(".fa-times");
+        var menuIcon = document.querySelector(".fa-bars");
+    
+        function showMenu() {
+            navLinks.style.right = "0"; // Slide in
+            navLinks.style.display = "block"; // Ensure it's visible
+        }
+    
+        function hideMenu() {
+            navLinks.style.right = "-250px"; // Slide out
+        }
+    
+        // Add event listeners to the icons
+        if (menuIcon) {
+            menuIcon.addEventListener("click", showMenu);
+        }
+        
+        if (closeIcon) {
+            closeIcon.addEventListener("click", hideMenu);
+        }
+    });
+    
+</script>
+<!-- Digital Marketing Section -->
+<section class="digital-marketing-container">
+    <h2 class="digital-marketing-heading">Explore Our Digital Marketing Strategies</h2>
+    <div class="digital-marketing-list">
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-search"></i></div>
+            <h3>Search Engine Optimization (SEO)</h3>
+            <p>Optimizing websites to rank higher on search engines, increasing organic traffic.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
+            <h3>Search Engine Marketing (SEM)</h3>
+            <p>Running paid ads (Google Ads, Bing Ads) to appear in search results.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-thumbs-up"></i></div>
+            <h3>Social Media Marketing (SMM)</h3>
+            <p>Promoting brands on platforms like Facebook, Instagram, and LinkedIn.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-pen"></i></div>
+            <h3>Content Marketing</h3>
+            <p>Creating valuable content to educate, engage, and attract potential customers.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-envelope-open-text"></i></div>
+            <h3>Email Marketing</h3>
+            <p>Sending personalized emails to nurture leads and promote products.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-users"></i></div>
+            <h3>Affiliate Marketing</h3>
+            <p>Partnering with affiliates who promote products for a commission.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-user-check"></i></div>
+            <h3>Influencer Marketing</h3>
+            <p>Collaborating with influencers to reach targeted audiences.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-ad"></i></div>
+            <h3>Pay-Per-Click Advertising (PPC)</h3>
+            <p>Running paid ads on platforms like Google, Facebook, and Instagram.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Mobile Marketing</h3>
+            <p>Targeting users through SMS, app-based ads, and mobile content.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-video"></i></div>
+            <h3>Video Marketing</h3>
+            <p>Using videos on platforms like YouTube and TikTok to engage audiences.</p>
+        </div>
+
+        <div class="digital-marketing-item">
+            <div class="icon-wrapper"><i class="fas fa-shopping-cart"></i></div>
+            <h3>E-commerce Marketing</h3>
+            <p>Driving traffic and sales for online stores using SEO and paid ads.</p>
+        </div>
+    </div>
+    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+</section>
+
+
+<!-- Footer Section -->
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Adospire is a full-service marketing firm providing digital and traditional solutions to help businesses grow and stand out.</p>
+        </div>
+        
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-envelope"></i> adospire.bh@gmail.com</p>
+            <p><i class="fa fa-phone"></i>+973 33228027</p>
+            <p><i class="fa fa-map-marker"></i> Bahrain BH</p>
+        </div>
+
+        <!-- Fixed Follow Us Section -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/adospire_marketing.bh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/adospire/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Adospire. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    
+
+</body>
+</html>

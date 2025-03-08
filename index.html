@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adospire</title>
+    <link rel="icon" type="png" href="logo-adospire.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Load Latest FontAwesome 6 for New Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- SwiperJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+<!-- Home Section -->
+<section id="home" class="header">
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-Adospire-01.png" alt="Adospire Logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+        <h1>Elevate Your Brand with Strategic Marketing</h1>
+        <p>
+            Adospire offers digital and traditional marketing solutions to help businesses grow, stand out, and connect with their audience—from SEO and branding.
+        </p>
+        <a href="#contact" class="visit-btn">Visit Us To Know More</a>
+    </div>
+</section>
+
+
+<!-- JavaScript Navbar home transparent -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector("nav");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    });
+    
+</script>
+
+<!-- JavaScript for toggle menu -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var navLinks = document.getElementById("navLinks");
+        var closeIcon = document.querySelector(".fa-times");
+        var menuIcon = document.querySelector(".fa-bars");
+    
+        function showMenu() {
+            navLinks.style.right = "0"; // Slide in
+            navLinks.style.display = "block"; // Ensure it's visible
+        }
+    
+        function hideMenu() {
+            navLinks.style.right = "-250px"; // Slide out
+        }
+    
+        // Add event listeners to the icons
+        if (menuIcon) {
+            menuIcon.addEventListener("click", showMenu);
+        }
+        
+        if (closeIcon) {
+            closeIcon.addEventListener("click", hideMenu);
+        }
+    });
+    
+</script>
+
+<!-- Slideshow Section -->
+<div class="swiper mySwiper futuristic-slide">
+    <div class="swiper-wrapper" id="swiperWrapper">
+        <!-- Slides will be dynamically generated here via JavaScript -->
+    </div>
+</div>
+
+<script src="assets/js/swiper-bundle.min.js"></script>
+
+<script>
+    // Dynamically generate slides with a for loop to duplicate them infinitely
+    // script.js
+    document.addEventListener('DOMContentLoaded', () => {
+        const wrapper = document.getElementById('swiperWrapper');
+        const slides = ['Branding', 'Automation', 'Website Design', 'Creative', 'Best Quality'];
+        
+        // Duplicate slides 5 times (original + 4 more sets) for seamless infinite looping without gaps
+        for (let i = 0; i < 5; i++) { // Increased to 5 times for more seamless looping
+            slides.forEach(slideText => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.textContent = slideText;
+                wrapper.appendChild(slide);
+            });
+        }
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto", // Allows slides to size based on content, matching text width
+            spaceBetween: 0, // Remove any gap between slides to eliminate spaces
+            loop: true, // Enables infinite looping
+            speed: 10000, // Maintain fast speed for continuous sliding
+            autoplay: {
+                delay: 0, // No delay between slides for continuous motion
+                disableOnInteraction: false // Allows autoplay to continue after interaction
+            },
+            freeMode: true, // Enables free scrolling for smooth sliding
+            freeModeMomentum: false, // Prevents momentum after interaction, ensuring consistent speed
+            // Ensure slides fill the container without gaps
+            centeredSlides: false, // Disable centering to prevent extra space
+            slideToClickedSlide: false // Disable clicking to slide for consistent autoplay
+        });
+    });
+</script>
+
+<!-- WhatsApp Button -->
+<div class="whatsapp-button">
+    <a href="https://wa.me/+97333228027" target="_blank" rel="noopener noreferrer">
+        <img src="whatsapp-icon.png" alt="WhatsApp">
+    </a>
+</div>
+
+<!-- JavaScript for WhatsApp button and other scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the WhatsApp button and footer elements
+        const whatsappButton = document.querySelector('.whatsapp-button');
+        const footer = document.querySelector('.footer');
+
+        // Scroll detection for WhatsApp button
+        window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY > 200; // Show button after scrolling 100px down
+            const footerPosition = footer ? footer.getBoundingClientRect().top : Infinity; // Default to Infinity if no footer
+            const windowHeight = window.innerHeight;
+
+            // Show button when scrolled down, but hide if near footer
+            if (scrolled && (!footer || footerPosition > windowHeight)) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+
+            // Optionally, hide completely when footer is reached
+            if (footer && footerPosition <= windowHeight) {
+                whatsappButton.style.display = 'none';
+            } else {
+                whatsappButton.style.display = 'flex';
+            }
+        });
+
+        // Initial check to ensure button state on page load
+        const initialScroll = window.scrollY > 200;
+        const initialFooterPosition = footer ? footer.getBoundingClientRect().top : Infinity;
+        const initialWindowHeight = window.innerHeight;
+
+        if (initialScroll && (!footer || initialFooterPosition > initialWindowHeight)) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+
+        if (footer && initialFooterPosition <= initialWindowHeight) {
+            whatsappButton.style.display = 'none';
+        } else {
+            whatsappButton.style.display = 'flex';
+        }
+    });
+</script>
+
+<!-- About us Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image" data-particle>
+                <img src="about-image.jpg" alt="Team Meeting">
+                <div class="about-overlay-box"></div>
+            </div>
+            <div class="about-text">
+                <h2>About <span class="a-highlight">Adospire</span></h2>
+                <p>Adospire is a dynamic digital solutions company dedicated to helping businesses establish a strong online presence and achieve long-term growth. We specialize in e-commerce development, web design, digital marketing, branding, and influencer marketing, providing customized strategies that drive real results.</p>
+                <p>Our team focuses on innovation, user-friendly experiences, and seamless functionality, ensuring every solution is tailored to meet your business needs. Whether you're looking to build a high-performing online store, enhance your brand visibility, or connect with the right audience, Adospire is here to turn your vision into reality.</p>
+                <p>With a commitment to quality, transparency, and customer success, we empower businesses to thrive in the ever-evolving digital world.</p>
+                <a href="#" class="btn">More About Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Services Section -->
+<section id="service" class="services-section">
+    <h2 class="section-title">Our Creative <span class="servicesh">Services</span></h2>
+    <p class="section-subtitle">Get the most of reduction in your team's operating costs for the whole product which creates amazing UX/UI experiences.</p>
+    
+    <div class="timeline">
+        <!-- Service Item 1 -->
+        <div class="timeline-item left">
+            <div class="timeline-circle blue">01</div>
+            <div class="service-card">
+                <i class="fa fa-laptop-code"></i>
+                <h3>Web Designing & Development</h3>
+                <p>Professional web design and development services to build a responsive, user-friendly, and engaging website that helps your business grow online.</p>
+                <a href="website-overview.html">View Details →</a>
+            </div>
+        </div>
+        
+        <!-- Service Item 2 -->
+        <div class="timeline-item right">
+            <div class="timeline-circle green">02</div>
+            <div class="service-card">
+                <i class="fa fa-shopping-cart"></i>
+                <h3>Ecommerce Website Designing</h3>
+                <p>Professional eCommerce website design services that drive sales. Create a seamless shopping experience with custom, responsive, and user-friendly designs.</p>
+                <a href="e-commerce.html">View Details →</a>
+            </div>
+        </div>
+        
+        <!-- Service Item 3 -->
+        <div class="timeline-item left">
+            <div class="timeline-circle brown">03</div>
+            <div class="service-card">
+                <i class="fa fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Digital marketing uses online channels like social media, SEO, and ads to reach the right audience, boost brand visibility, and drive business growth.</p>
+                <a href="dm-overview.html">View Details →</a>
+            </div>
+        </div>
+        
+        <!-- Service Item 4 -->
+        <div class="timeline-item right">
+            <div class="timeline-circle red">04</div>
+            <div class="service-card">
+                <i class="fa fa-user"></i>
+                <h3>Branding & Strategy</h3>
+                <p>Branding & Strategy focus on creating a strong identity and clear vision, helping businesses stand out, build trust, and connect with the right audience.</p>
+                <a href="branding-overview.html">View Details →</a>
+            </div>
+        </div>
+
+        <!-- Service Item 5 -->
+        <div class="timeline-item left">
+            <div class="timeline-circle blue">05</div>
+            <div class="service-card">
+                <i class="fa fa-users"></i>
+                <h3>Influencer Marketing</h3>
+                <p>Influencer marketing leverages trusted social media personalities to promote brands, creating authentic engagement and boosting customer trust.</p>
+                <a href="influencer-overview.html">View Details →</a>
+            </div>
+        </div>
+        
+        <!-- Service Item 6 -->
+        <div class="timeline-item right">
+            <div class="timeline-circle orange">06</div>
+            <div class="service-card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Traditional Marketing</h3>
+                <p>Traditional marketing uses offline channels like TV, radio, print, and billboards to reach a broad audience, creating strong brand awareness and engagement.</p>
+                <a href="tm-overview.html" class="view-details-btn">View Details →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact-us Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="contact-content">
+            <!-- Left Side: Map Only -->
+            <div class="contact-map">
+                <h2 class="map-heading">Our Location</h2>
+                <!-- Google Maps Embed (Bahrain) -->
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57428.60418874247!2d50.5560!3d26.0667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49a8c9d2b5c0df%3A0x3c5f7f0e8a1e7f0!2sBahrain!5e0!3m2!1sen!2sin!4v1696931234567!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        id="map-iframe">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form and Info -->
+            <div class="contact-text">
+                <h2>Contact <span class="c-highlight">Adospire</span></h2>
+                <p>We'd love to hear from you! Feel free to reach out for any inquiries, collaborations, or assistance.</p>
+
+                <form id="contactForm" class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="send-btn">Send Message</button>
+                </form>
+
+                <p class="contact-info">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:adospiremarketing.bh@gmail.com">adospiremarketing.bh@gmail.com</a>
+                </p>
+                <p class="contact-info">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+97333228027">+973 33228027</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+    (function(){
+        emailjs.init("ddhKmoXkOQKTXUCsl");
+        console.log("✅ EmailJS initialized");
+    })();
+
+    document.getElementById("contactForm").addEventListener("submit", function(event){
+        event.preventDefault();
+
+        let formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value
+        };
+        console.log("📌 Form Data:", formData);
+
+        // Checking phone number is added
+        if (!formData.phone) {
+            console.error("❌ Phone number is missing in formData");
+            alert("Please enter a valid phone number.");
+            return;
+        }
+
+        // Sending Email using EmailJS
+        emailjs.send("service_6uut3uf", "template_l92kbqv", formData)
+        .then(function(response) {
+            console.log("✅ Email sent successfully", response);
+
+            // Storing data in an Excel sheet (Google Sheet via SheetDB API)
+            fetch("https://sheetdb.io/api/v1/62uod1c43mezj", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ data: [formData] })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("✅ Data stored in SheetDB:", data);
+                alert("Message sent and stored successfully!");
+                document.getElementById("contactForm").reset();
+            })
+            .catch(error => console.error("❌ Error storing data in SheetDB:", error));
+
+        }, function(error) {
+            console.error("❌ Email failed to send:", error);
+        });
+
+    });
+</script>
+
+<!-- Footer Section -->
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Adospire is a full-service marketing firm providing digital and traditional solutions to help businesses grow and stand out.</p>
+        </div>
+        
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-envelope"></i> adospire.bh@gmail.com</p>
+            <p><i class="fa fa-phone"></i>+973 33228027</p>
+            <p><i class="fa fa-map-marker"></i> Bahrain BH</p>
+        </div>
+
+        <!-- Fixed Follow Us Section -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/adospire_marketing.bh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/adospire/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Adospire. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
+
+

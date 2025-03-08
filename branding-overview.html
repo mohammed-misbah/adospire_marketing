@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Overview</title>
+    <link rel="stylesheet" href="branding-overview.css">
+    <link rel="icon" type="png" href="logo-adospire.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Load Latest FontAwesome 6 for New Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Home Section -->
+<section id="home" class="header">
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-Adospire-01.png" alt="Adospire Logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="text-box">
+        <h1>Branding & Strategy Overview</h1>
+    </div>
+
+</section>
+
+<!-- JavaScript Navbar home transparent -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector("nav");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    });
+    
+</script>
+
+<!-- JavaScript for toggle menu -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var navLinks = document.getElementById("navLinks");
+        var closeIcon = document.querySelector(".fa-times");
+        var menuIcon = document.querySelector(".fa-bars");
+    
+        function showMenu() {
+            navLinks.style.right = "0"; // Slide in
+            navLinks.style.display = "block"; // Ensure it's visible
+        }
+    
+        function hideMenu() {
+            navLinks.style.right = "-250px"; // Slide out
+        }
+    
+        // Add event listeners to the icons
+        if (menuIcon) {
+            menuIcon.addEventListener("click", showMenu);
+        }
+        
+        if (closeIcon) {
+            closeIcon.addEventListener("click", hideMenu);
+        }
+    });
+    
+</script>
+
+<!-- Branding and Strategy Section -->
+<section class="branding-container">
+    <h2 class="branding-heading">Discover Our Branding Strategies</h2>
+    <div class="branding-list">
+        <div class="branding-item">
+            <div class="icon-wrapper"><i class="fas fa-box"></i></div>
+            <h3>Product Branding</h3>
+            <p>Establishing a unique identity for a product through logos, packaging, messaging, and positioning.</p>
+        </div>
+
+        <div class="branding-item">
+            <div class="icon-wrapper"><i class="fas fa-user"></i></div>
+            <h3>Personal Branding</h3>
+            <p>Building an individual’s reputation, expertise, and online presence to enhance credibility.</p>
+        </div>
+
+        <div class="branding-item">
+            <div class="icon-wrapper"><i class="fas fa-building"></i></div>
+            <h3>Corporate Branding</h3>
+            <p>Developing a strong and consistent brand image for an entire company, including values and mission.</p>
+        </div>
+
+        <div class="branding-item">
+            <div class="icon-wrapper"><i class="fas fa-briefcase"></i></div>
+            <h3>Company Branding</h3>
+            <p>Creating a unified identity for a business, covering visual identity, messaging, and customer relationships.</p>
+        </div>
+
+        <div class="branding-item">
+            <div class="icon-wrapper"><i class="fas fa-paint-brush"></i></div>
+            <h3>Graphic Designing</h3>
+            <p>Designing logos, typography, color schemes, and marketing materials for a strong brand presence.</p>
+        </div>
+    </div>
+    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+</section>
+
+<!-- Footer Section -->
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Adospire is a full-service marketing firm providing digital and traditional solutions to help businesses grow and stand out.</p>
+        </div>
+        
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-envelope"></i> adospire.bh@gmail.com</p>
+            <p><i class="fa fa-phone"></i>+973 33228027</p>
+            <p><i class="fa fa-map-marker"></i> Bahrain BH</p>
+        </div>
+
+        <!-- Fixed Follow Us Section -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/adospire_marketing.bh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/adospire/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Adospire. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="404.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Load Latest FontAwesome 6 for New Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Home Section -->
+<section id="home" class="header">
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-Adospire-01.png" alt="Adospire Logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+</section>
+
+<!-- JavaScript Navbar home transparent -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector("nav");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    });
+    
+</script>
+
+<!-- JavaScript for toggle menu -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var navLinks = document.getElementById("navLinks");
+        var closeIcon = document.querySelector(".fa-times");
+        var menuIcon = document.querySelector(".fa-bars");
+    
+        function showMenu() {
+            navLinks.style.right = "0"; // Slide in
+            navLinks.style.display = "block"; // Ensure it's visible
+        }
+    
+        function hideMenu() {
+            navLinks.style.right = "-250px"; // Slide out
+        }
+    
+        // Add event listeners to the icons
+        if (menuIcon) {
+            menuIcon.addEventListener("click", showMenu);
+        }
+        
+        if (closeIcon) {
+            closeIcon.addEventListener("click", hideMenu);
+        }
+    });
+    
+</script>
+
+<section class="error-404">
+    <div class="error-container">
+        <div class="animation-wrapper">
+            <video src="404-error.mp4" alt="404 Error Animation" class="error-gif" autoplay loop muted playsinline></video>
+        </div>
+        <div class="error-text">
+            <p class="error-message">Oops! Page Not Found</p>
+            <p class="error-submessage">Looks like we've wandered off the digital map!</p>
+        </div>
+        <a href="index.html" class="home-btn">Return to Home</a>
+    </div>
+</section>
+
+</body>
+</html>
